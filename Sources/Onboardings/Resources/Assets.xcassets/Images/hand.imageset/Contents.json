@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "hand.png",
+      "filename" : "вёздочка 1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "hand@2x.png",
+      "filename" : "вёздочка 1-2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "hand@3x.png",
+      "filename" : "вёздочка 1-3.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
