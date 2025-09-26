@@ -114,6 +114,7 @@ public struct FirstVideoView: View {
     
     private func setupVideo() {
         // Правильный способ загрузки из SPM
+        
         guard let videoURL = getVideoURLFromSPM() else {
             print("Video not found in SPM resources")
             // Fallback: попробуем загрузить из main bundle (если видео в проекте)
@@ -127,26 +128,7 @@ public struct FirstVideoView: View {
     }
     
     private func getVideoURLFromSPM() -> URL? {
-        // 1. Пробуем получить bundle модуля SPM
-        let moduleName = "Onboardings"
-        
-        // Все возможные имена bundle для SPM
-        let possibleBundleNames = [
-            "\(moduleName)_\(moduleName)",
-            "\(moduleName)",
-            "Onboardings_Onboardings"
-        ]
-        
-        for bundleName in possibleBundleNames {
-            if let bundlePath = Bundle.main.path(forResource: bundleName, ofType: "bundle"),
-               let bundle = Bundle(path: bundlePath),
-               let url = bundle.url(forResource: "ThirdVideo", withExtension: "mp4") {
-                print("Found video in SPM bundle: \(bundleName)")
-                return url
-            }
-        }
-        
-        return nil
+        Bundle.module.url(forResource: "ThirdVideo", withExtension: "mp4")
     }
     
     private func setupPlayer(with url: URL) {
@@ -174,3 +156,8 @@ public struct FirstVideoView: View {
 }
 
 private class BundleFinder {}
+
+
+#Preview {
+    FirstVideoView {}
+}

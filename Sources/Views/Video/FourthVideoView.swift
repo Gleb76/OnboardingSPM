@@ -109,26 +109,7 @@ public struct FourthVideoView: View {
     }
     
     private func getVideoURLFromSPM() -> URL? {
-        // 1. Пробуем получить bundle модуля SPM
-        let moduleName = "Onboardings"
-        
-        // Все возможные имена bundle для SPM
-        let possibleBundleNames = [
-            "\(moduleName)_\(moduleName)",
-            "\(moduleName)",
-            "Onboardings_Onboardings"
-        ]
-        
-        for bundleName in possibleBundleNames {
-            if let bundlePath = Bundle.main.path(forResource: bundleName, ofType: "bundle"),
-               let bundle = Bundle(path: bundlePath),
-               let url = bundle.url(forResource: "FirstVideo", withExtension: "mp4") {
-                print("Found video in SPM bundle: \(bundleName)")
-                return url
-            }
-        }
-        
-        return nil
+        Bundle.module.url(forResource: "FirstVideo", withExtension: "mp4")
     }
     
     private func setupPlayer(with url: URL) {

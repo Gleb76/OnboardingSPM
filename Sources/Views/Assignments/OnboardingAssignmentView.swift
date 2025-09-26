@@ -44,7 +44,7 @@ public struct OnboardingAssignmentView: View {
                             Button {
                                 isFirstConfirmed.toggle()
                             } label: {
-                                Image(isFirstConfirmed ? .confirm : .notReady)
+                                Image(isFirstConfirmed ? "confirm" : "notReady", bundle: .module)
                                     .resizable()
                                     .frame(width: 20, height: 20)
                             }
@@ -59,7 +59,7 @@ public struct OnboardingAssignmentView: View {
                             Button {
                                 isSecondConfirmed.toggle()
                             } label: {
-                                Image(isSecondConfirmed ? .confirm : .notReady)
+                                Image(isSecondConfirmed ? "confirm" : "notReady", bundle: .module)
                                     .resizable()
                                     .frame(width: 20, height: 20)
                             }
@@ -74,7 +74,7 @@ public struct OnboardingAssignmentView: View {
                             Button {
                                 isThirdConfirmed.toggle()
                             } label: {
-                                Image(isThirdConfirmed ? .confirm : .notReady)
+                                Image(isThirdConfirmed ? "confirm" : "notReady", bundle: .module)
                                     .resizable()
                                     .frame(width: 20, height: 20)
                             }
